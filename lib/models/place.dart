@@ -2,7 +2,7 @@ class Place {
   final int id;
   final String name;
   final String location;
-  final String category; // beach, culture, city, nature
+  final String category; 
   final double rating;
   final String imageUrl;
 
