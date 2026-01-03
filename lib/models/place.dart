@@ -1,8 +1,10 @@
+import 'user_preference.dart';
+
 class Place {
   final int id;
   final String name;
   final String location;
-  final String category; 
+  final TravelType travelType;
   final double rating;
   final String imageUrl;
 
@@ -10,7 +12,7 @@ class Place {
     required this.id,
     required this.name,
     required this.location,
-    required this.category,
+    required this.travelType,
     required this.rating,
     required this.imageUrl,
   });
