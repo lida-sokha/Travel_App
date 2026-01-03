@@ -4,16 +4,19 @@ class Place {
   final int id;
   final String name;
   final String location;
-  final TravelType travelType;
+  final String category;
   final double rating;
   final String imageUrl;
+
+  final TravelType travelType;
 
   Place({
     required this.id,
     required this.name,
     required this.location,
-    required this.travelType,
+    required this.category,
     required this.rating,
     required this.imageUrl,
+    required this.travelType,
   });
 }

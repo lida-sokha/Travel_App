@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/models/user_preference.dart';
 import '../models/place.dart';
 
 class PlaceDetailScreen extends StatelessWidget {
@@ -37,10 +38,13 @@ class PlaceDetailScreen extends StatelessWidget {
                     const Icon(Icons.star, color: Colors.orange),
                     const SizedBox(width: 4),
                     Text(place.rating.toString()),
+                    const Spacer(),
                   ],
                 ),
                 const SizedBox(height: 16),
-                Chip(label: Text(place.category)),
+                Chip(
+                  label: Text(place.travelType.label),
+                ),
               ],
             ),
           ),

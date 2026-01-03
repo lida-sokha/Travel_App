@@ -8,6 +8,21 @@ enum ActivityLevel { relaxing, balanced, active }
 
 enum InterestType { localFood, photography, nature, adventure }
 
+extension TravelTypeX on TravelType {
+  String get label {
+    switch (this) {
+      case TravelType.beach:
+        return 'Beach';
+      case TravelType.mountain:
+        return 'Mountain';
+      case TravelType.city:
+        return 'City';
+      case TravelType.nature:
+        return 'Nature';
+    }
+  }
+}
+
 class UserPreference {
   TravelType? travelType;
   PartnerType? travelPartner;

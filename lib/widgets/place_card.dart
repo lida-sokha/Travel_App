@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/models/user_preference.dart';
 import '../models/place.dart';
 import '../ui/place_detail_screen.dart';
 
@@ -62,7 +63,7 @@ class PlaceCard extends StatelessWidget {
                       Text(place.rating.toString()),
                       const Spacer(),
                       Chip(
-                        label: Text(place.category),
+                         label: Text(place.travelType.label),
                         backgroundColor: Colors.lightBlue.shade50,
                       ),
                     ],
