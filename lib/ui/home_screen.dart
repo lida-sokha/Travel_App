@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/widgets/place_card.dart';
 import '../widgets/image_carousel.dart';
 import '../data/places_data.dart';
+import '../ui/question_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -73,9 +74,16 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedItemColor: Colors.grey,
         currentIndex: selectedIndex,
         onTap: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
+          if (index == 0) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const QuestionScreen()),
+            );
+          } else {
+            setState(() {
+              selectedIndex = index;
+            });
+          }
         },
         showSelectedLabels: true,
         showUnselectedLabels: true,

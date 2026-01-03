@@ -9,6 +9,8 @@ class Place {
   final String imageUrl;
 
   final TravelType travelType;
+  final ActivityLevel activityLevel; // Added
+  final BudgetLevel budgetLevel;
 
   Place({
     required this.id,
@@ -18,5 +20,8 @@ class Place {
     required this.rating,
     required this.imageUrl,
     required this.travelType,
+    required this.activityLevel, // Added to constructor
+    required this.budgetLevel,
   });
+
 }
