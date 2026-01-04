@@ -62,7 +62,7 @@ class TripHistoryScreen extends StatelessWidget {
                               ),
                               const SizedBox(height: 4),
                               Text(
-                                trip.place.name,
+                                trip.placeName,
                                 style: TextStyle(color: Colors.grey.shade600),
                               ),
                               const SizedBox(height: 8),

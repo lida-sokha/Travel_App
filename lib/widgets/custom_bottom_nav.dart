@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/ui/home_screen.dart';
 import '../ui/question_screen.dart'; // Adjust path based on your folder structure
-import '../ui/history_screen.dart';
+import '../ui/trip_history_screen.dart';
 
 class CustomBottomNav extends StatelessWidget {
   final int currentIndex;
@@ -36,7 +36,7 @@ class CustomBottomNav extends StatelessWidget {
         } else if (index == 2) {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const HistoryScreen()),
+            MaterialPageRoute(builder: (context) => const TripHistoryScreen()),
           );
         }
       },

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/ui/home_screen.dart';
 import '../models/place.dart';
 import '../widgets/place_card.dart';
 import '../widgets/custom_bottom_nav.dart';
@@ -19,7 +18,6 @@ class _ResultScreenState extends State<ResultScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Matches for You')),
-      // 3. Use widget.recommendedPlaces to access the data from the State class
       body: widget.recommendedPlaces.isEmpty
           ? const Center(child: Text("No matches found."))
           : ListView.builder(

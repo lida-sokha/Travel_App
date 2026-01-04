@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import '../models/hotel.dart';
+import '../models/trip_history.dart';
+import '../data/trip_history_data.dart';
+import '../data/places_data.dart';
+import '../ui/trip_history_screen.dart';
 
 class BookingScreen extends StatefulWidget {
   final Hotel hotel;
@@ -184,8 +188,45 @@ class _BookingScreenState extends State<BookingScreen> {
                     onPressed: nights == 0
                         ? null
                         : () {
-                            // SAVE BOOKING HERE (Trip History)
-                            Navigator.pop(context);
+                            // We search the list for a place that matches the hotel's placeId
+                            String foundPlaceName = "Unknown Location";
+
+                            for (var p in placesData) {
+                              if (p.id == widget.hotel.placeId) {
+                                foundPlaceName = p.name;
+                                break;
+                              }
+                            }
+
+                            // Create the new history entry
+                            final newTrip = TripHistory(
+                              hotel: widget.hotel,
+                              placeName: foundPlaceName,
+                              totalPrice: totalPrice,
+                              bookingDate: DateTime.now(),
+                            );
+
+                            // Add to the global list
+                            setState(() {
+                              tripHistoryData.add(newTrip);
+                            });
+
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  'Trip to $foundPlaceName booked!',
+                                ),
+                                backgroundColor: Colors.teal,
+                                duration: const Duration(seconds: 2),
+                              ),
+                            );
+
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const TripHistoryScreen(),
+                              ),
+                            );
                           },
                     child: const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 32),
