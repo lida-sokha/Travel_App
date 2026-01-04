@@ -31,7 +31,6 @@ final List<Place> placesData = [
     travelType: TravelType.city,
   ),
 
-  // 🌿 Nature
   Place(
     id: 4,
     name: 'Kampot',

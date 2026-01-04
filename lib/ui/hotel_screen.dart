@@ -15,33 +15,101 @@ class HotelScreen extends StatelessWidget {
       itemBuilder: (context, index) {
         final hotel = hotels[index];
 
-        return ListTile(
-          leading: ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              hotel.imageUrl,
-              width: 60,
-              height: 60,
-              fit: BoxFit.cover,
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(18),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => HotelDetailScreen(hotel: hotel),
+                ),
+              );
+            },
+            child: Container(
+              height: 130,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(18),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.08),
+                    blurRadius: 12,
+                    offset: const Offset(0, 6),
+                  ),
+                ],
+              ),
+              child: Row(
+                children: [
+                  // IMAGE
+                  ClipRRect(
+                    borderRadius: const BorderRadius.horizontal(
+                      left: Radius.circular(18),
+                    ),
+                    child: Image.asset(
+                      hotel.imageUrl,
+                      width: 130,
+                      height: 130,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+
+                  // INFO
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(14),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            hotel.name,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+
+                          const SizedBox(height: 6),
+
+                          Row(
+                            children: [
+                              const Icon(
+                                Icons.star,
+                                size: 16,
+                                color: Colors.orange,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                hotel.rating.toString(),
+                                style: const TextStyle(fontSize: 14),
+                              ),
+                            ],
+                          ),
+
+                          const Spacer(),
+
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Text(
+                              '\$${hotel.pricePerNight}/night',
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.teal,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          title: Text(hotel.name),
-          subtitle: Text('\$${hotel.pricePerNight}/night'),
-          trailing: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Icon(Icons.star, size: 16, color: Colors.orange),
-              Text(hotel.rating.toString()),
-            ],
-          ),
-          onTap: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (_) => HotelDetailScreen(hotel: hotel),
-              ),
-            );
-          },
         );
       },
     );

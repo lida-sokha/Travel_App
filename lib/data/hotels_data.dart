@@ -72,10 +72,10 @@ final List<Hotel> hotelsData = [
     bookingUrl: 'https://www.booking.com',
   ),
 
-  // ===== Kep (placeId: 5) =====
+  // ===== Kep (placeId: 11) =====
   Hotel(
     id: 8,
-    placeId: 5,
+    placeId: 11,
     name: 'Veranda Natural Resort',
     pricePerNight: 140,
     rating: 4.8,
@@ -83,10 +83,10 @@ final List<Hotel> hotelsData = [
     bookingUrl: 'https://www.booking.com',
   ),
 
-  // ===== Sihanoukville (placeId: 6) =====
+  // ===== Sihanoukville (placeId: 12) =====
   Hotel(
     id: 9,
-    placeId: 6,
+    placeId: 12,
     name: 'Independence Hotel Resort',
     pricePerNight: 160,
     rating: 4.6,
@@ -95,7 +95,7 @@ final List<Hotel> hotelsData = [
   ),
   Hotel(
     id: 10,
-    placeId: 6,
+    placeId: 12,
     name: 'Sokha Beach Resort',
     pricePerNight: 150,
     rating: 4.5,
@@ -103,10 +103,10 @@ final List<Hotel> hotelsData = [
     bookingUrl: 'https://www.booking.com',
   ),
 
-  // ===== Koh Kong (placeId: 7) =====
+  // ===== Koh Kong (placeId: 13) =====
   Hotel(
     id: 11,
-    placeId: 7,
+    placeId: 13,
     name: 'Canvas & Orchids Retreat',
     pricePerNight: 180,
     rating: 4.7,
@@ -114,10 +114,10 @@ final List<Hotel> hotelsData = [
     bookingUrl: 'https://www.booking.com',
   ),
 
-  // ===== Pursat (placeId: 8) =====
+  // ===== Pursat (placeId: 9) =====
   Hotel(
     id: 12,
-    placeId: 8,
+    placeId: 9,
     name: 'Pursat Riverside Hotel',
     pricePerNight: 55,
     rating: 4.2,
@@ -125,10 +125,10 @@ final List<Hotel> hotelsData = [
     bookingUrl: 'https://www.agoda.com',
   ),
 
-  // ===== Mondulkiri (placeId: 9) =====
+  // ===== Mondulkiri (placeId: 5) =====
   Hotel(
     id: 13,
-    placeId: 9,
+    placeId: 5,
     name: 'Nature Lodge Mondulkiri',
     pricePerNight: 70,
     rating: 4.6,
@@ -136,10 +136,10 @@ final List<Hotel> hotelsData = [
     bookingUrl: 'https://www.booking.com',
   ),
 
-  // ===== Ratanakiri (placeId: 10) =====
+  // ===== Ratanakiri (placeId: 6) =====
   Hotel(
     id: 14,
-    placeId: 10,
+    placeId: 6,
     name: 'Terres Rouges Lodge',
     pricePerNight: 85,
     rating: 4.5,
@@ -147,10 +147,10 @@ final List<Hotel> hotelsData = [
     bookingUrl: 'https://www.agoda.com',
   ),
 
-  // ===== Kratie (placeId: 11) =====
+  // ===== Kratie (placeId: 7) =====
   Hotel(
     id: 15,
-    placeId: 11,
+    placeId: 7,
     name: 'Le Relais de Chhlong',
     pricePerNight: 95,
     rating: 4.7,
@@ -158,10 +158,10 @@ final List<Hotel> hotelsData = [
     bookingUrl: 'https://www.booking.com',
   ),
 
-  // ===== Preah Vihear (placeId: 12) =====
+  // ===== Preah Vihear (placeId: 14) =====
   Hotel(
     id: 16,
-    placeId: 12,
+    placeId: 14,
     name: 'Preah Vihear Boutique Hotel',
     pricePerNight: 60,
     rating: 4.3,
@@ -169,10 +169,10 @@ final List<Hotel> hotelsData = [
     bookingUrl: 'https://www.agoda.com',
   ),
 
-  // ===== Stung Treng (placeId: 13) =====
+  // ===== Stung Treng (placeId: 8) =====
   Hotel(
     id: 17,
-    placeId: 13,
+    placeId: 8,
     name: 'Golden River Hotel',
     pricePerNight: 65,
     rating: 4.4,
@@ -180,10 +180,10 @@ final List<Hotel> hotelsData = [
     bookingUrl: 'https://www.booking.com',
   ),
 
-  // ===== Pailin (placeId: 14) =====
+  // ===== Pailin (placeId: 10) =====
   Hotel(
     id: 18,
-    placeId: 14,
+    placeId: 10,
     name: 'Memoria Palace & Resort',
     pricePerNight: 70,
     rating: 4.3,
