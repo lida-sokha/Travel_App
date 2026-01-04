@@ -3,6 +3,9 @@ import 'package:travel_app/widgets/place_card.dart';
 import '../widgets/image_carousel.dart';
 import '../data/places_data.dart';
 import '../widgets/custom_bottom_nav.dart';
+import '../logic/history_analyzer.dart';
+import '../data/trip_history_data.dart';
+import '../widgets/recommend_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,9 +16,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool _showAll = false;
+  int selectedIndex = 1;
   @override
   Widget build(BuildContext context) {
-    int selectedIndex = 1;
+    final preferredType = HistoryAnalyzer.getPreferredCategory(tripHistoryData);
+    final historyRecommendations = placesData
+        .where((place) => place.travelType == preferredType)
+        .toList();
+
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(title: const Text('Local Travel')),
@@ -36,6 +44,35 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
 
               const SizedBox(height: 20),
+              
+              if (historyRecommendations.isNotEmpty) ...[
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                  child: Text(
+                    "Recommended For You",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(
+                  height: 250, 
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.only(left: 20),
+                    itemCount: historyRecommendations.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        width: 200, 
+                        margin: const EdgeInsets.only(right: 15),
+                        child: RecommendCard(
+                          place: historyRecommendations[index],
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+
+              const SizedBox(height: 20),
 
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
@@ -45,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
 
-              const SizedBox(height: 15),
+              const SizedBox(height: 20),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
