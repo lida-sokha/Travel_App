@@ -2,7 +2,7 @@ import '../models/place.dart';
 import '../models/user_preference.dart';
 
 final List<Place> placesData = [
-  // 🏙 City
+  // ================= CITY =================
   Place(
     id: 1,
     name: 'Phnom Penh',
@@ -11,6 +11,9 @@ final List<Place> placesData = [
     rating: 4.6,
     imageUrl: 'assets/images/places/phnom_penh.jpg',
     travelType: TravelType.city,
+    activityLevel: ActivityLevel.balanced,
+    budgetLevel: BudgetLevel.medium,
+    interests: [InterestType.localFood, InterestType.photography],
   ),
   Place(
     id: 2,
@@ -20,6 +23,13 @@ final List<Place> placesData = [
     rating: 4.9,
     imageUrl: 'assets/images/places/siem_reap.jpg',
     travelType: TravelType.city,
+    activityLevel: ActivityLevel.active,
+    budgetLevel: BudgetLevel.high,
+    interests: [
+      InterestType.photography,
+      InterestType.adventure,
+      InterestType.localFood,
+    ],
   ),
   Place(
     id: 3,
@@ -29,8 +39,12 @@ final List<Place> placesData = [
     rating: 4.7,
     imageUrl: 'assets/images/places/battambang.jpg',
     travelType: TravelType.city,
+    activityLevel: ActivityLevel.balanced,
+    budgetLevel: BudgetLevel.low,
+    interests: [InterestType.localFood, InterestType.photography],
   ),
 
+  // 🌿 Nature
   Place(
     id: 4,
     name: 'Kampot',
@@ -39,6 +53,13 @@ final List<Place> placesData = [
     rating: 4.7,
     imageUrl: 'assets/images/places/kampot.jpg',
     travelType: TravelType.nature,
+    activityLevel: ActivityLevel.relaxing,
+    budgetLevel: BudgetLevel.medium,
+    interests: [
+      InterestType.nature,
+      InterestType.localFood,
+      InterestType.photography,
+    ],
   ),
   Place(
     id: 5,
@@ -48,6 +69,13 @@ final List<Place> placesData = [
     rating: 4.8,
     imageUrl: 'assets/images/places/mondulkiri.jpg',
     travelType: TravelType.nature,
+    activityLevel: ActivityLevel.active,
+    budgetLevel: BudgetLevel.medium,
+    interests: [
+      InterestType.nature,
+      InterestType.adventure,
+      InterestType.photography,
+    ],
   ),
   Place(
     id: 6,
@@ -57,6 +85,9 @@ final List<Place> placesData = [
     rating: 4.7,
     imageUrl: 'assets/images/places/ratanakiri.jpg',
     travelType: TravelType.nature,
+    activityLevel: ActivityLevel.active,
+    budgetLevel: BudgetLevel.low,
+    interests: [InterestType.adventure, InterestType.nature],
   ),
   Place(
     id: 7,
@@ -66,70 +97,60 @@ final List<Place> placesData = [
     rating: 4.4,
     imageUrl: 'assets/images/places/kratie.jpg',
     travelType: TravelType.nature,
-  ),
-  Place(
-    id: 8,
-    name: 'Stung Treng',
-    location: 'Cambodia',
-    category: 'nature',
-    rating: 4.5,
-    imageUrl: 'assets/images/places/stung_treng.jpg',
-    travelType: TravelType.nature,
-  ),
-  Place(
-    id: 9,
-    name: 'Pursat',
-    location: 'Cambodia',
-    category: 'nature',
-    rating: 4.3,
-    imageUrl: 'assets/images/places/pursat.jpg',
-    travelType: TravelType.nature,
-  ),
-  Place(
-    id: 10,
-    name: 'Pailin',
-    location: 'Cambodia',
-    category: 'nature',
-    rating: 4.2,
-    imageUrl: 'assets/images/places/pailin.jpg',
-    travelType: TravelType.nature,
+    activityLevel: ActivityLevel.relaxing,
+    budgetLevel: BudgetLevel.low,
+    interests: [InterestType.nature, InterestType.photography],
   ),
 
-  // 🏖 Beach
+  // ================= BEACH =================
   Place(
-    id: 11,
+    id: 8,
     name: 'Kep',
     location: 'Cambodia',
     category: 'beach',
     rating: 4.6,
     imageUrl: 'assets/images/places/kep.jpg',
     travelType: TravelType.beach,
+    activityLevel: ActivityLevel.relaxing,
+    budgetLevel: BudgetLevel.medium,
+    interests: [InterestType.localFood, InterestType.photography],
   ),
   Place(
-    id: 12,
+    id: 9,
     name: 'Sihanoukville',
     location: 'Cambodia',
     category: 'beach',
     rating: 4.4,
     imageUrl: 'assets/images/places/sihanoukville.jpg',
     travelType: TravelType.beach,
+    activityLevel: ActivityLevel.balanced,
+    budgetLevel: BudgetLevel.high,
+    interests: [InterestType.adventure, InterestType.photography],
   ),
   Place(
-    id: 13,
+    id: 10,
     name: 'Koh Kong',
     location: 'Cambodia',
     category: 'beach',
     rating: 4.6,
     imageUrl: 'assets/images/places/koh_kong.jpg',
     travelType: TravelType.beach,
+    activityLevel: ActivityLevel.active,
+    budgetLevel: BudgetLevel.medium,
+    interests: [InterestType.adventure, InterestType.nature],
   ),
+
+  // ================= MOUNTAIN / CULTURE =================
   Place(
-    id: 14,
+    id: 11,
     name: 'Preah Vihear',
     location: 'Cambodia',
     category: 'culture',
     rating: 4.8,
     imageUrl: 'assets/images/places/preah_vihear.jpg',
     travelType: TravelType.mountain,
+    activityLevel: ActivityLevel.active,
+    budgetLevel: BudgetLevel.medium,
+    interests: [InterestType.photography, InterestType.adventure],
   ),
 ];

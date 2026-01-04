@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/widgets/place_card.dart';
 import '../widgets/image_carousel.dart';
 import '../data/places_data.dart';
+import '../widgets/custom_bottom_nav.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -66,34 +67,13 @@ class _HomeScreenState extends State<HomeScreen> {
           );
         },
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        elevation: 8, // Adds a slight shadow for better UI
-        selectedItemColor: const Color(0xFF4DD0E1),
-        unselectedItemColor: Colors.grey,
+      bottomNavigationBar: CustomBottomNav(
         currentIndex: selectedIndex,
         onTap: (index) {
           setState(() {
             selectedIndex = index;
           });
         },
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.play_arrow, size: 28),
-            label: 'Recommend',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, size: 28),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.history, size: 28),
-            label: 'History',
-          ),
-        ],
       ),
     );
   }
