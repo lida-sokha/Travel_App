@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
-import '../models/place.dart';
-import '../data/hotels_data.dart';
-import '../ui/hotel_screen.dart';
+import '../models/hotel.dart';
 
-class PlaceDetailScreen extends StatelessWidget {
-  final Place place;
-  const PlaceDetailScreen({super.key, required this.place});
+class HotelDetailScreen extends StatelessWidget {
+  final Hotel hotel;
+  const HotelDetailScreen({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
-    final placeHotels = hotelsData.where((h) => h.placeId == place.id).toList();
-
     return Scaffold(
-      appBar: AppBar(title: Text(place.name)),
+      appBar: AppBar(title: Text(hotel.name)),
       body: ListView(
         children: [
           Image.asset(
-            place.imageUrl,
+            hotel.imageUrl,
             height: 250,
             width: double.infinity,
             fit: BoxFit.cover,
@@ -28,33 +24,31 @@ class PlaceDetailScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  place.name,
+                  hotel.name,
                   style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 6),
-                Text(place.location, style: TextStyle(color: Colors.grey[600])),
-                const SizedBox(height: 10),
+                const SizedBox(height: 8),
                 Row(
                   children: [
                     const Icon(Icons.star, color: Colors.orange),
                     const SizedBox(width: 4),
-                    Text(place.rating.toString()),
+                    Text(hotel.rating.toString()),
                   ],
                 ),
-                const SizedBox(height: 16),
-
-                const Text(
-                  'Hotels',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                const SizedBox(height: 12),
+                Text(
+                  '\$${hotel.pricePerNight} per night',
+                  style: const TextStyle(fontSize: 18),
                 ),
+                const SizedBox(height: 20),
+
+                ElevatedButton(onPressed: () {}, child: const Text('Book Now')),
               ],
             ),
           ),
-
-          HotelScreen(hotels: placeHotels),
         ],
       ),
     );
