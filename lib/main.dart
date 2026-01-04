@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color.fromARGB(255, 92, 225, 230),
+          backgroundColor: Color.fromARGB(255, 45, 48, 71),
           foregroundColor: Colors.white,
           elevation: 2,
         ),

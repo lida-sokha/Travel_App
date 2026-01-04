@@ -31,16 +31,9 @@ class _ResultScreenState extends State<ResultScreen> {
       bottomNavigationBar: CustomBottomNav(
         currentIndex: selectedIndex,
         onTap: (index) {
-          if (index == 1) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const HomeScreen()),
-            );
-          } else {
-            setState(() {
-              selectedIndex = index;
-            });
-          }
+          setState(() {
+            selectedIndex = index;
+          });
         },
       ),
     );
