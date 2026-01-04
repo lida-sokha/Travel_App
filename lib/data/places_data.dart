@@ -44,7 +44,6 @@ final List<Place> placesData = [
     interests: [InterestType.localFood, InterestType.photography],
   ),
 
-  // ================= NATURE =================
   Place(
     id: 4,
     name: 'Kampot',
