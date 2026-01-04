@@ -58,6 +58,11 @@ class _QuestionScreenState extends State<QuestionScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'Question ${_currentPage + 1} of ${questions.length}',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Color.fromARGB(255, 45, 48, 71),
         elevation: 0,
         leading: _currentPage > 0
@@ -72,13 +77,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
       ),
       body: Column(
         children: [
-          // Progress Bar
-          LinearProgressIndicator(
-            value: (_currentPage + 1) / questions.length,
-            backgroundColor: Colors.grey[200],
-            color: const Color.fromARGB(255, 172, 210, 237),
-          ),
-
           Expanded(
             child: PageView.builder(
               controller: _pageController,
@@ -105,7 +103,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
         ],
       ),
       bottomNavigationBar: CustomBottomNav(
-        currentIndex: selectedIndex, 
+        currentIndex: selectedIndex,
         onTap: (index) {
           setState(() {
             selectedIndex = index;

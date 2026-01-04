@@ -12,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool _showAll = false;
   @override
   Widget build(BuildContext context) {
     int selectedIndex = 1;
@@ -51,7 +52,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: GridView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: placesData.length,
+                  itemCount: _showAll
+                      ? placesData.length
+                      : (placesData.length > 4 ? 4 : placesData.length),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: crossAxisCount,
                     mainAxisSpacing: 16,
@@ -63,6 +66,30 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
+              if (!_showAll && placesData.length > 4)
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Center(
+                    child: TextButton.icon(
+                      onPressed: () {
+                        setState(() {
+                          _showAll = true;
+                        });
+                      },
+                      icon: const Icon(
+                        Icons.arrow_drop_down,
+                        color: Color.fromARGB(255, 45, 48, 71),
+                      ),
+                      label: const Text(
+                        'View More',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 45, 48, 71),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
             ],
           );
         },

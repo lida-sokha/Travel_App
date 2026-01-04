@@ -17,7 +17,7 @@ class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Matches for You')),
+      appBar: AppBar(centerTitle: true, title: const Text('Matches for You')),
       body: widget.recommendedPlaces.isEmpty
           ? const Center(child: Text("No matches found."))
           : ListView.builder(
