@@ -1,6 +1,6 @@
 class Hotel {
   final int id;
-  final int placeId; // link to Place
+  final int placeId; 
   final String name;
   final double pricePerNight;
   final double rating;

@@ -67,15 +67,7 @@ class UserPreference {
     this.activityLevel,
     this.interest,
   });
-
-  void clear() {
-    travelType = null;
-    travelPartner = null;
-    budgetLevel = null;
-    activityLevel = null;
-    interest = null;
-  }
-
+  
   void setPreference(QuestionType type, String value) {
     switch (type) {
       case QuestionType.travelType:

@@ -1,9 +1,8 @@
-// trip_history.dart
 import '../models/hotel.dart';
 
 class TripHistory {
   final Hotel hotel;
-  final String placeName; // Store the name directly for easy access
+  final String placeName; 
   final double totalPrice;
   final DateTime bookingDate;
 
