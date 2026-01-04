@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../models/question.dart'; // Ensure path is correct
+import '../models/question.dart'; 
 
 class QuestionPage extends StatelessWidget {
   final Question question;
   final Function(String) onOptionSelected;
-  final String? selectedOption; // To show which one is currently picked
+  final String? selectedOption; 
 
   const QuestionPage({
     super.key,
@@ -20,7 +20,7 @@ class QuestionPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Question Title
+          
           Text(
             question.title,
             style: const TextStyle(
@@ -31,7 +31,6 @@ class QuestionPage extends StatelessWidget {
           ),
           const SizedBox(height: 30),
 
-          // Options List
           Expanded(
             child: ListView.builder(
               itemCount: question.options.length,
