@@ -6,29 +6,33 @@ class RecommendationEngine {
     List<Place> allPlaces,
     UserPreference prefs,
   ) {
-    // STEP 1: Filter the list (Only keep the category the user wants)
-    List<Place> filteredResults = allPlaces.where((place) {
-      // If user hasn't picked anything, show everything.
-      // If they picked Beach, only return places where travelType is Beach.
+    
+    final filtered = allPlaces.where((place) {
       if (prefs.travelType == null) return true;
       return place.travelType == prefs.travelType;
     }).toList();
 
-    // STEP 2: Sort the filtered list (Rank the best beaches at the top)
-    filteredResults.sort((a, b) {
-      int scoreA = _calculateScore(a, prefs);
-      int scoreB = _calculateScore(b, prefs);
-      return scoreB.compareTo(scoreA);
-    });
+    final scored = filtered.map((place) {
+      final score = _calculateScore(place, prefs);
+      return MapEntry(place, score);
+    }).toList();
 
-    return filteredResults;
+    scored.sort((a, b) => b.value.compareTo(a.value));
+
+    return scored.map((e) => e.key).toList();
   }
 
   static int _calculateScore(Place place, UserPreference prefs) {
     int score = 0;
-    // Since travelType is already matched in Step 1, we score based on other details
-    if (place.activityLevel == prefs.activityLevel) score += 5;
-    if (place.budgetLevel == prefs.budgetLevel) score += 2;
+
+    if (prefs.budgetLevel != null && place.budgetLevel == prefs.budgetLevel) {
+      score += 25;
+    }
+
+    if (prefs.interest != null && place.interests.contains(prefs.interest)) {
+      score += 25;
+    }
+
     return score;
   }
 }

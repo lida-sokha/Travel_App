@@ -25,6 +25,34 @@ extension TravelTypeX on TravelType {
   }
 }
 
+extension BudgetLevelTypex on BudgetLevel {
+  String get label {
+    switch (this) {
+      case BudgetLevel.high:
+        return 'High';
+      case BudgetLevel.medium:
+        return 'Medium';
+      case BudgetLevel.low:
+        return 'Low';
+    }
+  }
+}
+
+extension InterestTypeX on InterestType {
+  String get label {
+    switch (this) {
+      case InterestType.localFood:
+        return 'Local Food';
+      case InterestType.photography:
+        return 'Photography';
+      case InterestType.nature:
+        return 'Nature';
+      case InterestType.adventure:
+        return 'Adventure';
+    }
+  }
+}
+
 class UserPreference {
   TravelType? travelType;
   PartnerType? travelPartner;
@@ -53,26 +81,25 @@ class UserPreference {
       case QuestionType.travelType:
         travelType = TravelType.values.firstWhere((e) => e.label == value);
         break;
+
       case QuestionType.partnerType:
-        // Matching by string name if you haven't added labels to PartnerType yet
         travelPartner = PartnerType.values.firstWhere(
           (e) => e.name.toLowerCase() == value.toLowerCase(),
         );
         break;
+
       case QuestionType.budgetLevel:
-        budgetLevel = BudgetLevel.values.firstWhere(
-          (e) => e.name.toLowerCase() == value.toLowerCase(),
-        );
+        budgetLevel = BudgetLevel.values.firstWhere((e) => e.label == value);
         break;
+
       case QuestionType.activityLevel:
         activityLevel = ActivityLevel.values.firstWhere(
           (e) => e.name.toLowerCase() == value.toLowerCase(),
         );
         break;
+
       case QuestionType.interest:
-        interest = InterestType.values.firstWhere(
-          (e) => e.name.toLowerCase() == value.toLowerCase(),
-        );
+        interest = InterestType.values.firstWhere((e) => e.label == value);
         break;
     }
   }
@@ -84,11 +111,11 @@ class UserPreference {
       case QuestionType.partnerType:
         return travelPartner?.name;
       case QuestionType.budgetLevel:
-        return budgetLevel?.name;
+        return budgetLevel?.label;
       case QuestionType.activityLevel:
         return activityLevel?.name;
       case QuestionType.interest:
-        return interest?.name;
+        return interest?.label;
     }
   }
 }

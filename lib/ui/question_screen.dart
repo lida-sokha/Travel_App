@@ -6,6 +6,7 @@ import '../models/user_preference.dart';
 import '../logic/recommendation_engine.dart';
 import '../widgets/build_questionPage.dart';
 import '../ui/result_screen.dart';
+import '../widgets/custom_bottom_nav.dart';
 
 class QuestionScreen extends StatefulWidget {
   const QuestionScreen({super.key});
@@ -15,6 +16,7 @@ class QuestionScreen extends StatefulWidget {
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
+  int selectedIndex = 0;
   final PageController _pageController = PageController();
   final UserPreference _userPrefs = UserPreference();
   int _currentPage = 0;
@@ -103,6 +105,19 @@ class _QuestionScreenState extends State<QuestionScreen> {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: CustomBottomNav(
+        currentIndex: selectedIndex, // 0
+        onTap: (index) {
+          if (index == 1) {
+            // This closes the quiz and returns to the existing Home Screen
+            Navigator.pop(context);
+          } else {
+            setState(() {
+              selectedIndex = index;
+            });
+          }
+        },
       ),
     );
   }

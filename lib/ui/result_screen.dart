@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/ui/home_screen.dart';
 import '../models/place.dart';
-import '../widgets/place_card.dart'; // Make sure this import is correct
+import '../widgets/place_card.dart';
+import '../widgets/custom_bottom_nav.dart';
 
 class ResultScreen extends StatefulWidget {
-  // 1. Declare the variable here
   final List<Place> recommendedPlaces;
 
-  // 2. Add it to the constructor
   const ResultScreen({super.key, required this.recommendedPlaces});
 
   @override
@@ -14,6 +14,7 @@ class ResultScreen extends StatefulWidget {
 }
 
 class _ResultScreenState extends State<ResultScreen> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +28,21 @@ class _ResultScreenState extends State<ResultScreen> {
                 return PlaceCard(place: widget.recommendedPlaces[index]);
               },
             ),
+      bottomNavigationBar: CustomBottomNav(
+        currentIndex: selectedIndex,
+        onTap: (index) {
+          if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const HomeScreen()),
+            );
+          } else {
+            setState(() {
+              selectedIndex = index;
+            });
+          }
+        },
+      ),
     );
   }
 }

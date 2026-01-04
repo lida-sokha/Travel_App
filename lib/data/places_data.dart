@@ -2,7 +2,7 @@ import '../models/place.dart';
 import '../models/user_preference.dart';
 
 final List<Place> placesData = [
-  // City
+  // ================= CITY =================
   Place(
     id: 1,
     name: 'Phnom Penh',
@@ -13,6 +13,7 @@ final List<Place> placesData = [
     travelType: TravelType.city,
     activityLevel: ActivityLevel.balanced,
     budgetLevel: BudgetLevel.medium,
+    interests: [InterestType.localFood, InterestType.photography],
   ),
   Place(
     id: 2,
@@ -24,6 +25,11 @@ final List<Place> placesData = [
     travelType: TravelType.city,
     activityLevel: ActivityLevel.active,
     budgetLevel: BudgetLevel.high,
+    interests: [
+      InterestType.photography,
+      InterestType.adventure,
+      InterestType.localFood,
+    ],
   ),
   Place(
     id: 3,
@@ -35,9 +41,10 @@ final List<Place> placesData = [
     travelType: TravelType.city,
     activityLevel: ActivityLevel.balanced,
     budgetLevel: BudgetLevel.low,
+    interests: [InterestType.localFood, InterestType.photography],
   ),
 
-  //Nature
+  // ================= NATURE =================
   Place(
     id: 4,
     name: 'Kampot',
@@ -48,6 +55,11 @@ final List<Place> placesData = [
     travelType: TravelType.nature,
     activityLevel: ActivityLevel.relaxing,
     budgetLevel: BudgetLevel.medium,
+    interests: [
+      InterestType.nature,
+      InterestType.localFood,
+      InterestType.photography,
+    ],
   ),
   Place(
     id: 5,
@@ -59,6 +71,11 @@ final List<Place> placesData = [
     travelType: TravelType.nature,
     activityLevel: ActivityLevel.active,
     budgetLevel: BudgetLevel.medium,
+    interests: [
+      InterestType.nature,
+      InterestType.adventure,
+      InterestType.photography,
+    ],
   ),
   Place(
     id: 6,
@@ -70,6 +87,7 @@ final List<Place> placesData = [
     travelType: TravelType.nature,
     activityLevel: ActivityLevel.active,
     budgetLevel: BudgetLevel.low,
+    interests: [InterestType.adventure, InterestType.nature],
   ),
   Place(
     id: 7,
@@ -81,11 +99,12 @@ final List<Place> placesData = [
     travelType: TravelType.nature,
     activityLevel: ActivityLevel.relaxing,
     budgetLevel: BudgetLevel.low,
+    interests: [InterestType.nature, InterestType.photography],
   ),
 
-  // Beach
+  // ================= BEACH =================
   Place(
-    id: 11,
+    id: 8,
     name: 'Kep',
     location: 'Cambodia',
     category: 'beach',
@@ -94,9 +113,10 @@ final List<Place> placesData = [
     travelType: TravelType.beach,
     activityLevel: ActivityLevel.relaxing,
     budgetLevel: BudgetLevel.medium,
+    interests: [InterestType.localFood, InterestType.photography],
   ),
   Place(
-    id: 12,
+    id: 9,
     name: 'Sihanoukville',
     location: 'Cambodia',
     category: 'beach',
@@ -105,9 +125,10 @@ final List<Place> placesData = [
     travelType: TravelType.beach,
     activityLevel: ActivityLevel.balanced,
     budgetLevel: BudgetLevel.high,
+    interests: [InterestType.adventure, InterestType.photography],
   ),
   Place(
-    id: 13,
+    id: 10,
     name: 'Koh Kong',
     location: 'Cambodia',
     category: 'beach',
@@ -116,11 +137,12 @@ final List<Place> placesData = [
     travelType: TravelType.beach,
     activityLevel: ActivityLevel.active,
     budgetLevel: BudgetLevel.medium,
+    interests: [InterestType.adventure, InterestType.nature],
   ),
 
-  // Mountain / Culture
+  // ================= MOUNTAIN / CULTURE =================
   Place(
-    id: 14,
+    id: 11,
     name: 'Preah Vihear',
     location: 'Cambodia',
     category: 'culture',
@@ -129,5 +151,6 @@ final List<Place> placesData = [
     travelType: TravelType.mountain,
     activityLevel: ActivityLevel.active,
     budgetLevel: BudgetLevel.medium,
+    interests: [InterestType.photography, InterestType.adventure],
   ),
 ];
