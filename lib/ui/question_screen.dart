@@ -17,9 +17,9 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
   int selectedIndex = 0;
+  int _currentPage = 0;
   final PageController _pageController = PageController();
   final UserPreference _userPrefs = UserPreference();
-  int _currentPage = 0;
   void _onOptionSelected(QuestionType type, String value) {
     setState(() {
       _userPrefs.setPreference(type, value);
@@ -44,7 +44,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
       _userPrefs,
     );
 
-    // FIX: Navigate to your ResultScreen and pass the data
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
@@ -59,11 +58,11 @@ class _QuestionScreenState extends State<QuestionScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 45, 48, 71),
         elevation: 0,
         leading: _currentPage > 0
             ? IconButton(
-                icon: const Icon(Icons.arrow_back, color: Colors.black),
+                icon: const Icon(Icons.arrow_back, color: Colors.white),
                 onPressed: () => _pageController.previousPage(
                   duration: const Duration(milliseconds: 300),
                   curve: Curves.easeInOut,
@@ -77,7 +76,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
           LinearProgressIndicator(
             value: (_currentPage + 1) / questions.length,
             backgroundColor: Colors.grey[200],
-            color: const Color(0xFF4DD0E1),
+            color: const Color.fromARGB(255, 172, 210, 237),
           ),
 
           Expanded(
@@ -96,7 +95,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
                   onOptionSelected: (value) {
                     _onOptionSelected(questions[index].type, value);
                   },
-                  // Optional: pass the currently stored preference to show it's selected
                   selectedOption: _userPrefs.getValByType(
                     questions[index].type,
                   ),
@@ -107,16 +105,11 @@ class _QuestionScreenState extends State<QuestionScreen> {
         ],
       ),
       bottomNavigationBar: CustomBottomNav(
-        currentIndex: selectedIndex, // 0
+        currentIndex: selectedIndex, 
         onTap: (index) {
-          if (index == 1) {
-            // This closes the quiz and returns to the existing Home Screen
-            Navigator.pop(context);
-          } else {
-            setState(() {
-              selectedIndex = index;
-            });
-          }
+          setState(() {
+            selectedIndex = index;
+          });
         },
       ),
     );
