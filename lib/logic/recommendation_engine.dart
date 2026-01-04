@@ -1,30 +1,34 @@
 import '../models/place.dart';
 import '../models/user_preference.dart';
+
 class RecommendationEngine {
-  static List<Place> getRecommendations(List<Place> allPlaces, UserPreference prefs) {
-    return allPlaces.where((place) {
-      // Optional: Strict filtering (only show places that match travel type)
-      if (prefs.travelType != null && place.category != prefs.travelType) {
-        return false; 
-      }
-      return true;
-    }).toList()
-    ..sort((a, b) {
-      // Scoring logic
+  static List<Place> getRecommendations(
+    List<Place> allPlaces,
+    UserPreference prefs,
+  ) {
+    // STEP 1: Filter the list (Only keep the category the user wants)
+    List<Place> filteredResults = allPlaces.where((place) {
+      // If user hasn't picked anything, show everything.
+      // If they picked Beach, only return places where travelType is Beach.
+      if (prefs.travelType == null) return true;
+      return place.travelType == prefs.travelType;
+    }).toList();
+
+    // STEP 2: Sort the filtered list (Rank the best beaches at the top)
+    filteredResults.sort((a, b) {
       int scoreA = _calculateScore(a, prefs);
       int scoreB = _calculateScore(b, prefs);
-      return scoreB.compareTo(scoreA); // Highest score first
+      return scoreB.compareTo(scoreA);
     });
+
+    return filteredResults;
   }
 
   static int _calculateScore(Place place, UserPreference prefs) {
-  int score = 0;
-  
-  // Ensure place.travelType is an Enum or compare using .name
-  if (place.travelType == prefs.travelType) score += 3;
-  if (place.activityLevel == prefs.activityLevel) score += 2;
-  if (place.budgetLevel == prefs.budgetLevel) score += 1;
-  
-  return score;
-}
+    int score = 0;
+    // Since travelType is already matched in Step 1, we score based on other details
+    if (place.activityLevel == prefs.activityLevel) score += 5;
+    if (place.budgetLevel == prefs.budgetLevel) score += 2;
+    return score;
+  }
 }
