@@ -34,7 +34,7 @@ class CustomBottomNav extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const HomeScreen()),
           );
         } else if (index == 2) {
-          Navigator.push(
+          Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => const TripHistoryScreen()),
           );

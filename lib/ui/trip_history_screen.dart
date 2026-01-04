@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import '../data/trip_history_data.dart';
+import '../widgets/custom_bottom_nav.dart';
 
-class TripHistoryScreen extends StatelessWidget {
+class TripHistoryScreen extends StatefulWidget {
   const TripHistoryScreen({super.key});
 
+  @override
+  State<TripHistoryScreen> createState() => _TripHistoryScreenState();
+}
+
+class _TripHistoryScreenState extends State<TripHistoryScreen> {
+  int selectedIndex = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,6 +89,14 @@ class TripHistoryScreen extends StatelessWidget {
                 );
               },
             ),
+      bottomNavigationBar: CustomBottomNav(
+        currentIndex: selectedIndex,
+        onTap: (index) {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
+      ),
     );
   }
 }
