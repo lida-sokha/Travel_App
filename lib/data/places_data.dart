@@ -44,10 +44,6 @@ final List<Place> placesData = [
     interests: [InterestType.localFood, InterestType.photography],
   ),
 
-<<<<<<<<< Temporary merge branch 1
-  // ================= NATURE =================
-=========
->>>>>>>>> Temporary merge branch 2
   Place(
     id: 4,
     name: 'Kampot',
