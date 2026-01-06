@@ -26,7 +26,7 @@ class HotelDetailScreen extends StatelessWidget {
                 top: 40,
                 left: 16,
                 child: CircleAvatar(
-                  backgroundColor: Colors.black54,
+                  backgroundColor: const Color(0xFF2D3047),
                   child: IconButton(
                     icon: const Icon(Icons.arrow_back, color: Colors.white),
                     onPressed: () => Navigator.pop(context),
@@ -44,16 +44,19 @@ class HotelDetailScreen extends StatelessWidget {
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.black54,
+                    color: const Color(0xFFF9A825),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.star, size: 16, color: Colors.orange),
+                      const Icon(Icons.star, size: 16, color: Colors.black),
                       const SizedBox(width: 4),
                       Text(
                         hotel.rating.toString(),
-                        style: const TextStyle(color: Colors.white),
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
@@ -75,6 +78,7 @@ class HotelDetailScreen extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
+                      color: Color(0xFF111827),
                     ),
                   ),
 
@@ -83,9 +87,19 @@ class HotelDetailScreen extends StatelessWidget {
                   // LOCATION
                   Row(
                     children: const [
-                      Icon(Icons.location_on, size: 18, color: Colors.grey),
+                      Icon(
+                        Icons.location_on,
+                        size: 18,
+                        color: Color(0xFF2D3047),
+                      ),
                       SizedBox(width: 4),
-                      Text('Cambodia', style: TextStyle(color: Colors.grey)),
+                      Text(
+                        'Cambodia',
+                        style: TextStyle(
+                          color: Color(0xFF2D3047),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ],
                   ),
 
@@ -94,14 +108,18 @@ class HotelDetailScreen extends StatelessWidget {
                   // DESCRIPTION
                   const Text(
                     'Description',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF111827),
+                    ),
                   ),
 
                   const SizedBox(height: 8),
 
                   Text(
                     'This hotel offers modern comfort, excellent service, and a perfect location for your stay.',
-                    style: TextStyle(color: Colors.grey[700], height: 1.5),
+                    style: TextStyle(color: Colors.grey.shade700, height: 1.5),
                   ),
 
                   const SizedBox(height: 20),
@@ -109,7 +127,11 @@ class HotelDetailScreen extends StatelessWidget {
                   // AMENITIES
                   const Text(
                     'Amenities',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF111827),
+                    ),
                   ),
 
                   const SizedBox(height: 12),
@@ -140,7 +162,7 @@ class HotelDetailScreen extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
-                              color: Colors.teal,
+                              color: Color(0xFF2D3047),
                             ),
                           ),
                         ],
@@ -150,7 +172,7 @@ class HotelDetailScreen extends StatelessWidget {
                         height: 52,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.teal,
+                            backgroundColor: const Color(0xFF2D3047),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16),
                             ),
@@ -167,7 +189,11 @@ class HotelDetailScreen extends StatelessWidget {
                             padding: EdgeInsets.symmetric(horizontal: 30),
                             child: Text(
                               'Book Now',
-                              style: TextStyle(fontSize: 16),
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -198,11 +224,14 @@ class _Amenity extends StatelessWidget {
       child: Column(
         children: [
           CircleAvatar(
-            backgroundColor: Colors.teal.withOpacity(0.1),
-            child: Icon(icon, color: Colors.teal),
+            backgroundColor: const Color(0xFF2D3047),
+            child: Icon(icon, color: Colors.white),
           ),
           const SizedBox(height: 6),
-          Text(label, style: const TextStyle(fontSize: 12)),
+          Text(
+            label,
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+          ),
         ],
       ),
     );
