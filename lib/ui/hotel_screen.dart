@@ -98,7 +98,7 @@ class HotelScreen extends StatelessWidget {
                               style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: Color.fromARGB(255, 27, 138, 82),
+                                color: Colors.black,
                               ),
                             ),
                           ),

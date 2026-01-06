@@ -1,7 +1,8 @@
 class Hotel {
   final int id;
-  final int placeId; 
+  final int placeId;
   final String name;
+  final String address;
   final double pricePerNight;
   final double rating;
   final String imageUrl;
@@ -11,6 +12,7 @@ class Hotel {
     required this.id,
     required this.placeId,
     required this.name,
+    required this.address,
     required this.pricePerNight,
     required this.rating,
     required this.imageUrl,

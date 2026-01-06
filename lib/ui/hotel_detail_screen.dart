@@ -86,16 +86,16 @@ class HotelDetailScreen extends StatelessWidget {
 
                   // LOCATION
                   Row(
-                    children: const [
-                      Icon(
+                    children: [
+                      const Icon(
                         Icons.location_on,
                         size: 18,
                         color: Color(0xFF2D3047),
                       ),
-                      SizedBox(width: 4),
+                      const SizedBox(width: 4),
                       Text(
-                        'Cambodia',
-                        style: TextStyle(
+                        hotel.address,
+                        style: const TextStyle(
                           color: Color(0xFF2D3047),
                           fontWeight: FontWeight.w500,
                         ),
