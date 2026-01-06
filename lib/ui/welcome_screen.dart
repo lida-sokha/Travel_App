@@ -1,26 +1,8 @@
 import 'package:flutter/material.dart';
 import '../ui/home_screen.dart';
 
-void main() {
-  runApp(const LocalTravelApp());
-}
-
-class LocalTravelApp extends StatelessWidget {
-  const LocalTravelApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Local Travel',
-      theme: ThemeData(primarySwatch: Colors.cyan, useMaterial3: true),
-      home: const WelcomeScreen(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
 class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
+  const WelcomeScreen({super.key});
 
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
@@ -62,7 +44,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 172, 210, 237),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: FadeTransition(
           opacity: _fadeAnimation,
@@ -72,26 +54,18 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               children: [
                 const Spacer(flex: 2),
 
-                // Logo and Icon Section
                 Stack(
                   alignment: Alignment.center,
                   children: [
-                    // Background circle decoration
                     Container(
                       width: 220,
                       height: 220,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: const Color.fromARGB(
-                          255,
-                          45,
-                          48,
-                          71,
-                        ).withOpacity(0.1),
+                        color: const Color.fromARGB(255, 45, 48, 71),
                       ),
                     ),
 
-                    // Main icon - Map/Navigation for local travel
                     Container(
                       width: 160,
                       height: 160,
@@ -100,7 +74,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey.withOpacity(0.2),
+                            color: Colors.grey,
                             blurRadius: 20,
                             offset: const Offset(0, 10),
                           ),
@@ -113,7 +87,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       ),
                     ),
 
-                    // Floating camera icon (top right)
                     Positioned(
                       top: 15,
                       right: 35,
@@ -124,12 +97,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                           shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
-                              color: const Color.fromARGB(
-                                255,
-                                45,
-                                48,
-                                71,
-                              ).withOpacity(0.3),
+                              color: const Color.fromARGB(255, 45, 48, 71),
                               blurRadius: 10,
                               offset: const Offset(0, 5),
                             ),
@@ -143,7 +111,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       ),
                     ),
 
-                    // Floating location pin (bottom left)
                     Positioned(
                       bottom: 25,
                       left: 40,
@@ -154,12 +121,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                           shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
-                              color: const Color.fromARGB(
-                                255,
-                                45,
-                                48,
-                                71,
-                              ).withOpacity(0.3),
+                              color: const Color.fromARGB(255, 45, 48, 71),
                               blurRadius: 10,
                               offset: const Offset(0, 5),
                             ),
@@ -173,7 +135,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       ),
                     ),
 
-                    // Floating map icon (bottom right)
                     Positioned(
                       bottom: 20,
                       right: 50,
@@ -184,12 +145,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                           shape: BoxShape.circle,
                           boxShadow: [
                             BoxShadow(
-                              color: const Color.fromARGB(
-                                255,
-                                45,
-                                48,
-                                71,
-                              ).withOpacity(0.3),
+                              color: const Color.fromARGB(255, 45, 48, 71),
                               blurRadius: 10,
                               offset: const Offset(0, 5),
                             ),
@@ -220,7 +176,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
 
                 const SizedBox(height: 20),
 
-                // Tagline
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Text(
@@ -228,7 +183,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.white,
+                      color: Colors.grey[600],
                       height: 1.5,
                       letterSpacing: 0.5,
                     ),
@@ -260,12 +215,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                           borderRadius: BorderRadius.circular(30),
                         ),
                         elevation: 5,
-                        shadowColor: const Color.fromARGB(
-                          255,
-                          45,
-                          48,
-                          71,
-                        ).withOpacity(0.4),
+                        shadowColor: const Color.fromARGB(255, 45, 48, 71),
                       ),
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -289,7 +239,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 const SizedBox(height: 20),
 
                 const Spacer(flex: 1),
-                // Footer text
                 Padding(
                   padding: const EdgeInsets.only(bottom: 30),
                   child: Text(
