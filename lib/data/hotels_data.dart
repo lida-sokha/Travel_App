@@ -82,7 +82,7 @@ final List<Hotel> hotelsData = [
   // ===== Kep (placeId: 11) =====
   Hotel(
     id: 8,
-    placeId: 11,
+    placeId: 8,
     name: 'Veranda Natural Resort',
     address: 'Kep Mountain Hillside, Kep Province, Cambodia',
     pricePerNight: 140,
@@ -94,7 +94,7 @@ final List<Hotel> hotelsData = [
   // ===== Sihanoukville (placeId: 12) =====
   Hotel(
     id: 9,
-    placeId: 12,
+    placeId: 9,
     name: 'Independence Hotel Resort',
     address: 'Street 2 Thnou, Sangkat 3, Sihanoukville, Cambodia',
     pricePerNight: 160,
@@ -104,7 +104,7 @@ final List<Hotel> hotelsData = [
   ),
   Hotel(
     id: 10,
-    placeId: 12,
+    placeId: 9,
     name: 'Sokha Beach Resort',
     address: 'Street 2 Thnou, Sangkat 4, Sihanoukville, Cambodia',
     pricePerNight: 150,
