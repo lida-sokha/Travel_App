@@ -77,7 +77,7 @@ class _TripHistoryScreenState extends State<TripHistoryScreen> {
                                 '\$${trip.totalPrice}',
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.teal,
+                                  color: Color(0xFF2D3047),
                                 ),
                               ),
                             ],

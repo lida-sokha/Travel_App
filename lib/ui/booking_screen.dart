@@ -170,7 +170,7 @@ class _BookingScreenState extends State<BookingScreen> {
                       style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: Colors.teal,
+                        color: Color(0xFF2D3047),
                       ),
                     ),
                   ],
@@ -180,7 +180,7 @@ class _BookingScreenState extends State<BookingScreen> {
                   height: 50,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.teal,
+                      backgroundColor: const Color(0xFF2D3047),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
@@ -216,7 +216,7 @@ class _BookingScreenState extends State<BookingScreen> {
                                 content: Text(
                                   'Trip to $foundPlaceName booked!',
                                 ),
-                                backgroundColor: Colors.teal,
+                                backgroundColor: const Color(0xFF2D3047),
                                 duration: const Duration(seconds: 2),
                               ),
                             );
@@ -230,7 +230,10 @@ class _BookingScreenState extends State<BookingScreen> {
                           },
                     child: const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 32),
-                      child: Text('Confirm', style: TextStyle(fontSize: 16)),
+                      child: Text(
+                        'Confirm',
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
