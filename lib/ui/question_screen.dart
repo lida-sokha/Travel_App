@@ -20,6 +20,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
   int _currentPage = 0;
   final PageController _pageController = PageController();
   final UserPreference _userPrefs = UserPreference();
+
   void _onOptionSelected(QuestionType type, String value) {
     setState(() {
       _userPrefs.setPreference(type, value);

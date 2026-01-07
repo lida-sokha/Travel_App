@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:travel_app/models/question.dart';
 
 enum TravelType { beach, mountain, city, nature }
@@ -25,6 +27,21 @@ extension TravelTypeX on TravelType {
   }
 }
 
+extension PartnerTypeX on PartnerType {
+  String get label {
+    switch (this) {
+      case PartnerType.alone:
+        return 'Alone';
+      case PartnerType.friends:
+        return 'Friends';
+      case PartnerType.family:
+        return 'Family';
+      case PartnerType.partner:
+        return 'Partner';
+    }
+  }
+}
+
 extension BudgetLevelTypex on BudgetLevel {
   String get label {
     switch (this) {
@@ -34,6 +51,19 @@ extension BudgetLevelTypex on BudgetLevel {
         return 'Medium';
       case BudgetLevel.low:
         return 'Low';
+    }
+  }
+}
+
+extension ActivityLevelX on ActivityLevel {
+  String get label {
+    switch (this) {
+      case ActivityLevel.relaxing:
+        return 'Relaxing';
+      case ActivityLevel.balanced:
+        return 'Balanced';
+      case ActivityLevel.active:
+        return 'Active';
     }
   }
 }
@@ -67,7 +97,7 @@ class UserPreference {
     this.activityLevel,
     this.interest,
   });
-  
+
   void setPreference(QuestionType type, String value) {
     switch (type) {
       case QuestionType.travelType:
@@ -75,9 +105,7 @@ class UserPreference {
         break;
 
       case QuestionType.partnerType:
-        travelPartner = PartnerType.values.firstWhere(
-          (e) => e.name.toLowerCase() == value.toLowerCase(),
-        );
+        travelPartner = PartnerType.values.firstWhere((e) => e.label == value);
         break;
 
       case QuestionType.budgetLevel:
@@ -86,7 +114,7 @@ class UserPreference {
 
       case QuestionType.activityLevel:
         activityLevel = ActivityLevel.values.firstWhere(
-          (e) => e.name.toLowerCase() == value.toLowerCase(),
+          (e) => e.label == value,
         );
         break;
 
@@ -101,11 +129,11 @@ class UserPreference {
       case QuestionType.travelType:
         return travelType?.label;
       case QuestionType.partnerType:
-        return travelPartner?.name;
+        return travelPartner?.label;
       case QuestionType.budgetLevel:
         return budgetLevel?.label;
       case QuestionType.activityLevel:
-        return activityLevel?.name;
+        return activityLevel?.label;
       case QuestionType.interest:
         return interest?.label;
     }
