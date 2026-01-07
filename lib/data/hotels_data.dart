@@ -158,4 +158,15 @@ final List<Hotel> hotelsData = [
     rating: 4.3,
     imageUrl: 'assets/images/hotels/memoria_pailin.jpg',
   ),
+
+  Hotel(
+    id: 16,
+    placeId: 11,
+    name: 'Preah Vihear Boutique Hotel',
+    address:
+        'Street Oknha Franna, Srah Em Village, Chaom Ksan near Preah Vihear Temple, Anlong Veaeng, Cheom Ksan (Preah Vihear)',
+    pricePerNight: 60,
+    rating: 4.3,
+    imageUrl: 'assets/images/hotels/preah_vihear.jpg',
+  ),
 ];
