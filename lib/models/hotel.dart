@@ -6,7 +6,6 @@ class Hotel {
   final double pricePerNight;
   final double rating;
   final String imageUrl;
-  final String bookingUrl;
 
   Hotel({
     required this.id,
@@ -16,6 +15,5 @@ class Hotel {
     required this.pricePerNight,
     required this.rating,
     required this.imageUrl,
-    required this.bookingUrl,
   });
 }

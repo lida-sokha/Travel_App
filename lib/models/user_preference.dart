@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:travel_app/models/question.dart';
 
 enum TravelType { beach, mountain, city, nature }

@@ -10,7 +10,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 120,
     rating: 4.7,
     imageUrl: 'assets/images/hotels/plantation.jpg',
-    bookingUrl: 'https://www.booking.com',
   ),
   Hotel(
     id: 2,
@@ -20,7 +19,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 90,
     rating: 4.5,
     imageUrl: 'assets/images/hotels/okay_boutique.jpg',
-    bookingUrl: 'https://www.agoda.com',
   ),
 
   // ===== Siem Reap (placeId: 2) =====
@@ -32,7 +30,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 130,
     rating: 4.8,
     imageUrl: 'assets/images/hotels/golden_temple.jpg',
-    bookingUrl: 'https://www.booking.com',
   ),
   Hotel(
     id: 4,
@@ -42,7 +39,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 95,
     rating: 4.6,
     imageUrl: 'assets/images/hotels/angkor_paradise.jpg',
-    bookingUrl: 'https://www.agoda.com',
   ),
 
   // ===== Battambang (placeId: 3) =====
@@ -54,7 +50,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 80,
     rating: 4.4,
     imageUrl: 'assets/images/hotels/classy_battambang.jpg',
-    bookingUrl: 'https://www.booking.com',
   ),
 
   // ===== Kampot (placeId: 4) =====
@@ -66,7 +61,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 75,
     rating: 4.6,
     imageUrl: 'assets/images/hotels/rikitikitavi.jpg',
-    bookingUrl: 'https://www.agoda.com',
   ),
   Hotel(
     id: 7,
@@ -76,7 +70,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 60,
     rating: 4.5,
     imageUrl: 'assets/images/hotels/bamboo_bungalows.jpg',
-    bookingUrl: 'https://www.booking.com',
   ),
 
   // ===== Kep (placeId: 11) =====
@@ -88,7 +81,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 140,
     rating: 4.8,
     imageUrl: 'assets/images/hotels/veranda_kep.jpg',
-    bookingUrl: 'https://www.booking.com',
   ),
 
   // ===== Sihanoukville (placeId: 12) =====
@@ -100,7 +92,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 160,
     rating: 4.6,
     imageUrl: 'assets/images/hotels/independence.jpg',
-    bookingUrl: 'https://www.agoda.com',
   ),
   Hotel(
     id: 10,
@@ -110,7 +101,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 150,
     rating: 4.5,
     imageUrl: 'assets/images/hotels/sokha_beach.jpg',
-    bookingUrl: 'https://www.booking.com',
   ),
 
   // ===== Koh Kong (placeId: 13) =====
@@ -122,7 +112,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 180,
     rating: 4.7,
     imageUrl: 'assets/images/hotels/canvas_orchids.jpg',
-    bookingUrl: 'https://www.booking.com',
   ),
 
   // ===== Mondulkiri (placeId: 5) =====
@@ -135,7 +124,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 70,
     rating: 4.6,
     imageUrl: 'assets/images/hotels/mondulkiri_lodge.jpg',
-    bookingUrl: 'https://www.booking.com',
   ),
 
   // ===== Ratanakiri (placeId: 6) =====
@@ -147,7 +135,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 85,
     rating: 4.5,
     imageUrl: 'assets/images/hotels/terres_rouges.jpg',
-    bookingUrl: 'https://www.agoda.com',
   ),
 
   // ===== Kratie (placeId: 7) =====
@@ -159,7 +146,6 @@ final List<Hotel> hotelsData = [
     pricePerNight: 95,
     rating: 4.7,
     imageUrl: 'assets/images/hotels/chhlong.jpg',
-    bookingUrl: 'https://www.booking.com',
   ),
 
   // ===== Pailin (placeId: 10) =====
@@ -171,6 +157,5 @@ final List<Hotel> hotelsData = [
     pricePerNight: 70,
     rating: 4.3,
     imageUrl: 'assets/images/hotels/memoria_pailin.jpg',
-    bookingUrl: 'https://www.agoda.com',
   ),
 ];
